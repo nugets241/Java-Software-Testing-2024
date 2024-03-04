@@ -20,7 +20,7 @@ public class Hello {
 
     /**
      * Implements exercise 1.1.
-     * <p>
+     *
      * Demonstrates the Hello World program.
      *
      * @param  args  Command line arguments. Not used.
