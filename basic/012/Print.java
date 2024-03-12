@@ -26,7 +26,6 @@ public class Print {
      *
      * @param  args  Command line arguments. Not used.
      */
-
     public static void main(String[] args) {
         String date = "2024-03-12";
         String firstName = "Ej";
