@@ -8,25 +8,24 @@ public class CalculateGrade {
     /**
      * Calculates the total ECTS of a student.
      *
-     * @param  exam          The ECTS of the exam.
-     * @param  design        The ECTS of the design project.
-     * @param  implementation The ECTS of the implementation project.
-     * @return               The total ECTS of the student.
+     * @param exam           The ECTS of the exam.
+     * @param design         The ECTS of the design project.
+     * @param implementation The ECTS of the implementation project.
+     * @return The total ECTS of the student.
      */
-    public int calculateTotalECTS( int examECTS, int designECTS, int implementationECTS){
+    public int calculateTotalECTS(int examECTS, int designECTS, int implementationECTS) {
         return examECTS + designECTS + implementationECTS;
-
     }
 
     /**
      * Calculates the average grade of a student.
      *
-     * @param  examGrade          The grade of the exam.
-     * @param  designGrade        The grade of the design project.
-     * @param  implementationGrade The grade of the implementation project.
-     * @return                    The average grade of the student.
+     * @param examGrade           The grade of the exam.
+     * @param designGrade         The grade of the design project.
+     * @param implementationGrade The grade of the implementation project.
+     * @return The average grade of the student.
      */
-    public double calculateAverageGrade( int examGrade, int designGrade, int implementationGrade){
+    public double calculateAverageGrade(int examGrade, int designGrade, int implementationGrade) {
         int totalParts = 3;
         double average = (examGrade + designGrade + implementationGrade) / (double) totalParts;
         return Double.parseDouble(String.format("%.3f", average));
@@ -48,8 +47,6 @@ public class CalculateGrade {
         int designGrade = 4;
         int implementationGrade = 4;
 
-
-
         CalculateGrade calculateGrade = new CalculateGrade();
 
         int totalECTS = calculateGrade.calculateTotalECTS(examECTS, designECTS, implementationECTS);
@@ -64,3 +61,5 @@ public class CalculateGrade {
         System.out.println("Totals          " + totalECTS + "     " + averageGrade + " (Final grade)");
     }
 }
+
+// End of File
