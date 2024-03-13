@@ -47,6 +47,8 @@ public class IfDay {
      * Implements exercise 2.2.
      *
      * Demonstrates the printDay method.
+     *
+     * @param args Command line arguments. Not used.
      */
     public static void main(String[] args) {
         int today = MONDAY;
