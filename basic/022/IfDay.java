@@ -5,6 +5,9 @@
  */
 public class IfDay {
 
+    /*
+     * The numbers for the days of the week.
+     */
     final static int MONDAY = 1;
     final static int TUESDAY = 2;
     final static int WEDNESDAY = 3;
