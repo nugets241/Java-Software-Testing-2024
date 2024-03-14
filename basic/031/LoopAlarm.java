@@ -6,10 +6,9 @@
 public class LoopAlarm {
 
     /**
-     * Emulates an alarm clock by counting backwards from max to 1, then displaying
-     * "ALARM!".
+     * Counts down from the given number to 1, then prints "ALARM!".
      *
-     * @param max the starting value for the countdown
+     * @param max  The number to count down from.
      */
     public static void countdown(int max) {
         for (int i = max; i >= 1; i--) {
