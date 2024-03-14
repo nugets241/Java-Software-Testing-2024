@@ -25,7 +25,7 @@ public class IfTemperature {
             System.out.println("Ice Freezing");
         } else if (city == MONTREAL && temperature > -20) {
             System.out.println("Moderate Winter");
-        } else if ((city == TORONTO || city == VANCOUVER) && (temperature < -10 || temperature > -20)) {
+        } else if ((city == TORONTO || city == VANCOUVER) && temperature < -10 && temperature > -20) {
             System.out.println("Ice Cold");
         } else {
             System.out.println("Unknown");
