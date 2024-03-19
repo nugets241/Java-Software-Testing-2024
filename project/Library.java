@@ -7,6 +7,10 @@ import java.util.List;
  * @since       17.0 (minimum Java version)
  */
 public class Library {
+
+    /**
+     * The books in the library.
+     */
     private List<Book> books;
 
     /**
