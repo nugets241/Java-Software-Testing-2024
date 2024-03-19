@@ -7,8 +7,20 @@ import java.util.List;
  * @since       17.0 (minimum Java version)
  */
 public class User {
+
+    /**
+     * The name of the user.
+     */
     private String name;
+
+    /**
+     * The email of the user.
+     */
     private String email;
+
+    /**
+     * The books borrowed by the user.
+     */
     private List<Book> borrowedBooks;
 
     /**
