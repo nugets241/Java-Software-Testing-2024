@@ -4,10 +4,30 @@
  * @since       17.0 (minimum Java version)
  */
 public class Book {
+
+    /**
+     * The title of the book.
+     */
     private String title;
+
+    /**
+     * The author of the book.
+     */
     private String author;
+
+    /**
+     * The ISBN of the book.
+     */
     private String isbn;
+
+    /**
+     * The publication year of the book.
+     */
     private int publicationYear;
+
+    /**
+     * The availability of the book.
+     */
     private boolean isAvailable;
 
     /**
