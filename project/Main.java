@@ -4,6 +4,7 @@
  * @since       17.0 (minimum Java version)
  */
 public class Main {
+
     /**
      * Starts the application.
      *
