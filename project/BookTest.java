@@ -13,37 +13,77 @@ public class BookTest {
     }
 
     @Test
-    public void testGetTitle() {
+    public void testGetTitle1() {
         assertEquals("Title1", book1.getTitle());
+    }
+
+    @Test
+    public void testGetTitle2() {
         assertEquals("Title2", book2.getTitle());
+    }
+
+    @Test
+    public void testGetTitle3() {
         assertEquals("Title3", book3.getTitle());
     }
 
     @Test
-    public void testGetAuthor() {
+    public void testGetAuthor1() {
         assertEquals("Author1", book1.getAuthor());
+    }
+
+    @Test
+    public void testGetAuthor2() {
         assertEquals("Author2", book2.getAuthor());
+    }
+
+    @Test
+    public void testGetAuthor3() {
         assertEquals("Author3", book3.getAuthor());
     }
 
     @Test
-    public void testGetISBN() {
+    public void testGetISBN1() {
         assertEquals("ISBN1", book1.getISBN());
+    }
+
+    @Test
+    public void testGetISBN2() {
         assertEquals("ISBN2", book2.getISBN());
+    }
+
+    @Test
+    public void testGetISBN3() {
         assertEquals("ISBN3", book3.getISBN());
     }
 
     @Test
-    public void testGetPublicationYear() {
+    public void testGetPublicationYear1() {
         assertEquals(2024, book1.getPublicationYear());
+    }
+
+    @Test
+    public void testGetPublicationYear2() {
         assertEquals(2025, book2.getPublicationYear());
+    }
+
+    @Test
+    public void testGetPublicationYear3() {
         assertEquals(2026, book3.getPublicationYear());
     }
 
     @Test
-    public void testIsAvailable() {
+    public void testIsAvailable1() {
         assertTrue(book1.isAvailable());
+    }
+
+    @Test
+    public void testIsAvailable2() {
         assertTrue(book2.isAvailable());
+    }
+
+    @Test
+    public void testIsAvailable3() {
         assertTrue(book3.isAvailable());
     }
 }
