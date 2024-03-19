@@ -6,9 +6,25 @@ import java.util.Date;
  * @since       17.0 (minimum Java version)
  */
 public class Transaction {
+
+    /**
+     * The user of the transaction.
+     */
     private User user;
+
+    /**
+     * The book of the transaction.
+     */
     private Book book;
+
+    /**
+     * The borrow date of the transaction.
+     */
     private Date borrowDate;
+
+    /**
+     * The return date of the transaction.
+     */
     private Date returnDate;
 
     /**
