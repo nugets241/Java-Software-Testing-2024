@@ -18,57 +18,92 @@ public class UserTest {
     }
 
     @Test
-    public void testGetName() {
+    public void testGetName1() {
         assertEquals("User1", user1.getName());
+    }
+
+    @Test
+    public void testGetName2() {
         assertEquals("User2", user2.getName());
+    }
+
+    @Test
+    public void testGetName3() {
         assertEquals("User3", user3.getName());
     }
 
     @Test
-    public void testGetEmail() {
+    public void testGetEmail1() {
         assertEquals("user1@email.com", user1.getEmail());
+    }
+
+    @Test
+    public void testGetEmail2() {
         assertEquals("user2@email.com", user2.getEmail());
+    }
+
+    @Test
+    public void testGetEmail3() {
         assertEquals("user3@email.com", user3.getEmail());
     }
 
     @Test
-    public void testGetBorrowedBooks() {
+    public void testGetBorrowedBooks1() {
         user1.borrowBook(book1);
-        user2.borrowBook(book2);
-        user3.borrowBook(book3);
-
         assertTrue(user1.getBorrowedBooks().contains(book1));
+    }
+
+    @Test
+    public void testGetBorrowedBooks2() {
+        user2.borrowBook(book2);
         assertTrue(user2.getBorrowedBooks().contains(book2));
+    }
+
+    @Test
+    public void testGetBorrowedBooks3() {
+        user3.borrowBook(book3);
         assertTrue(user3.getBorrowedBooks().contains(book3));
     }
 
     @Test
-    public void testBorrowBook() {
+    public void testBorrowBook1() {
         user1.borrowBook(book1);
         assertTrue(user1.getBorrowedBooks().contains(book1));
         assertFalse(book1.isAvailable());
+    }
 
+    @Test
+    public void testBorrowBook2() {
         user2.borrowBook(book2);
         assertTrue(user2.getBorrowedBooks().contains(book2));
         assertFalse(book2.isAvailable());
+    }
 
+    @Test
+    public void testBorrowBook3() {
         user3.borrowBook(book3);
         assertTrue(user3.getBorrowedBooks().contains(book3));
         assertFalse(book3.isAvailable());
     }
 
     @Test
-    public void testReturnBook() {
+    public void testReturnBook1() {
         user1.borrowBook(book1);
         user1.returnBook(book1);
         assertFalse(user1.getBorrowedBooks().contains(book1));
         assertTrue(book1.isAvailable());
+    }
 
+    @Test
+    public void testReturnBook2() {
         user2.borrowBook(book2);
         user2.returnBook(book2);
         assertFalse(user2.getBorrowedBooks().contains(book2));
         assertTrue(book2.isAvailable());
+    }
 
+    @Test
+    public void testReturnBook3() {
         user3.borrowBook(book3);
         user3.returnBook(book3);
         assertFalse(user3.getBorrowedBooks().contains(book3));
