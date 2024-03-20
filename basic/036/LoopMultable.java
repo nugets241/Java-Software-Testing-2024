@@ -15,7 +15,8 @@ public class LoopMultable {
         for (int i = 1; i <= size; i++) {
             System.out.printf(" %2d", i);
         }
-        System.out.println("\n" + "----|" + "---".repeat(size));
+        System.out.println();
+        System.out.println(" ----" + "---".repeat(size));
         for (int i = 1; i <= size; i++) {
             System.out.printf(" %2d |", i);
             for (int j = 1; j <= size; j++) {
