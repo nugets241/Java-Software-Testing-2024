@@ -7,7 +7,8 @@ public class ArrayFind {
 
     /**
      * Returns the first value in the array that is within the given range.
-     * If no such value is found, returns the specified NOT_FOUND value.
+     *
+     * <p>If no such value is found, returns the specified NOT_FOUND value.
      *
      * @param array      The array to search.
      * @param from       The lower bound of the range.
