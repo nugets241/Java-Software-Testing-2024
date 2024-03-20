@@ -7,7 +7,8 @@ public class LoopSeries {
 
     /**
      * Prints a series of 10-based column numbers up to the given length.
-     * The last number is substituted with a space.
+     *
+     * <p>The last number is substituted with a space.
      *
      * @param length  The length of the series to print.
      */
