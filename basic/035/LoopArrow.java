@@ -12,12 +12,6 @@ public class LoopArrow {
      * @param ch    The character to use in the arrow.
      */
     public static void printArrow(int size, String ch) {
-        //expectecd output if size is 5 and ch is "*"
-        //   * * * *
-        //     * * * *
-        //       * * * *
-        //     * * * *
-        //   * * * *
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print("  ");
