@@ -19,17 +19,11 @@ public class LibraryManagement {
     private List<Transaction> transactions;
 
     /**
-     * The library of the library management system.
-     */
-    private Library library;
-
-    /**
      * Creates a new library management system.
      */
     public LibraryManagement() {
         this.users = new ArrayList<>();
         this.transactions = new ArrayList<>();
-        this.library = new Library();
     }
 
     /**
