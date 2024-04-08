@@ -2,14 +2,15 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+
 public class BookTest {
     private Book book1, book2, book3;
 
     @Before
     public void setUp() {
         book1 = new Book("Title1", "Author1", "ISBN1", 2024);
-        book2 = new Book("Title2", "Author2", "ISBN2", 2025);
-        book3 = new Book("Title3", "Author3", "ISBN3", 2026);
+        book2 = new Book("Title2", "Author2", "ISBN2", 1997);
+        book3 = new Book("Title3", "Author3", "ISBN3", 2003);
     }
 
     @Test
@@ -26,7 +27,6 @@ public class BookTest {
     public void testGetTitle3() {
         assertEquals("Title3", book3.getTitle());
     }
-
     @Test
     public void testGetAuthor1() {
         assertEquals("Author1", book1.getAuthor());
@@ -64,12 +64,12 @@ public class BookTest {
 
     @Test
     public void testGetPublicationYear2() {
-        assertEquals(2025, book2.getPublicationYear());
+        assertEquals(1997, book2.getPublicationYear());
     }
 
     @Test
     public void testGetPublicationYear3() {
-        assertEquals(2026, book3.getPublicationYear());
+        assertEquals(2003, book3.getPublicationYear());
     }
 
     @Test
@@ -85,5 +85,30 @@ public class BookTest {
     @Test
     public void testIsAvailable3() {
         assertTrue(book3.isAvailable());
+    }
+
+    @Test
+    public void testConstructorTitleException() {
+        assertThrows(IllegalArgumentException.class, () -> new Book(null, "Author", "ISBN", 2000));
+    }
+
+    @Test
+    public void testConstructorAuthorException() {
+        assertThrows(IllegalArgumentException.class, () -> new Book("Title", null, "ISBN", 2000));
+    }
+
+    @Test
+    public void testConstructorISBNException() {
+        assertThrows(IllegalArgumentException.class, () -> new Book("Title", "Author", null, 2000));
+    }
+
+    @Test
+    public void testConstructorPublicationYearNegativeException() {
+        assertThrows(IllegalArgumentException.class, () -> new Book("Title", "Author", "ISBN", -1));
+    }
+
+    @Test
+    public void testConstructorPublicationYearFutureException() {
+        assertThrows(IllegalArgumentException.class, () -> new Book("Title", "Author", "ISBN", 2030));
     }
 }
