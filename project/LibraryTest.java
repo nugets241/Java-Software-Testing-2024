@@ -11,8 +11,8 @@ public class LibraryTest {
         library = new Library();
 
         book1 = new Book("Title1", "Author1", "ISBN1", 2024);
-        book2 = new Book("Title2", "Author2", "ISBN2", 2025);
-        book3 = new Book("Title3", "Author3", "ISBN3", 2026);
+        book2 = new Book("Title2", "Author2", "ISBN2", 2003);
+        book3 = new Book("Title3", "Author3", "ISBN3", 1997);
     }
 
     @Test
@@ -115,5 +115,30 @@ public class LibraryTest {
         library.addBook(book3);
         assertEquals(book3, library.findBookByISBN("ISBN3"));
         assertNull(library.findBookByISBN("Nonexistent ISBN"));
+    }
+
+    @Test
+    public void testAddBookException() {
+        assertThrows(IllegalArgumentException.class, () -> library.addBook(null));
+    }
+
+    @Test
+    public void testRemoveBookException() {
+        assertThrows(IllegalArgumentException.class, () -> library.removeBook(null));
+    }
+
+    @Test
+    public void testFindBookByTitleException() {
+        assertThrows(IllegalArgumentException.class, () -> library.findBookByTitle(""));
+    }
+
+    @Test
+    public void testFindBookByAuthorException() {
+        assertThrows(IllegalArgumentException.class, () -> library.findBookByAuthor(""));
+    }
+
+    @Test
+    public void testFindBookByISBNException() {
+        assertThrows(IllegalArgumentException.class, () -> library.findBookByISBN(null));
     }
 }
