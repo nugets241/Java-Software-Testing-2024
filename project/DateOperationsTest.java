@@ -93,4 +93,29 @@ public class DateOperationsTest {
     public void testCalculateDaysBetween3() {
         assertEquals(759, dateOperations.calculateDaysBetween(date1, date3));
     }
+
+    @Test
+    public void testGetDayException() {
+        assertThrows(IllegalArgumentException.class, () -> dateOperations.getDay(null));
+    }
+
+    @Test
+    public void testGetMonthException() {
+        assertThrows(IllegalArgumentException.class, () -> dateOperations.getMonth(null));
+    }
+
+    @Test
+    public void testGetYearException() {
+        assertThrows(IllegalArgumentException.class, () -> dateOperations.getYear(null));
+    }
+
+    @Test
+    public void testIsLeapYearException() {
+        assertThrows(IllegalArgumentException.class, () -> dateOperations.isLeapYear(0));
+    }
+
+    @Test
+    public void testCalculateDaysBetweenException() {
+        assertThrows(IllegalArgumentException.class, () -> dateOperations.calculateDaysBetween(null, date2));
+    }
 }
