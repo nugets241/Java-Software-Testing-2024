@@ -16,8 +16,8 @@ public class LibraryManagementTest {
         user3 = new User("User3", "user3@email.com");
 
         book1 = new Book("Title1", "Author1", "ISBN1", 2024);
-        book2 = new Book("Title2", "Author2", "ISBN2", 2025);
-        book3 = new Book("Title3", "Author3", "ISBN3", 2026);
+        book2 = new Book("Title2", "Author2", "ISBN2", 1997);
+        book3 = new Book("Title3", "Author3", "ISBN3", 2003);
     }
 
     @Test
@@ -126,5 +126,30 @@ public class LibraryManagementTest {
         assertTrue(libraryManagement.getAllTransactions().contains(transaction1));
         assertTrue(libraryManagement.getAllTransactions().contains(transaction2));
         assertTrue(libraryManagement.getAllTransactions().contains(transaction3));
+    }
+
+    @Test
+    public void testRegisterUserException() {
+        assertThrows(IllegalArgumentException.class, () -> libraryManagement.registerUser(null));
+    }
+
+    @Test
+    public void testRemoveUserException() {
+        assertThrows(IllegalArgumentException.class, () -> libraryManagement.removeUser(null));
+    }
+
+    @Test
+    public void testFindUserByNameException() {
+        assertThrows(IllegalArgumentException.class, () -> libraryManagement.findUserByName(""));
+    }
+
+    @Test
+    public void testFindUserByEmailEmptyException() {
+        assertThrows(IllegalArgumentException.class, () -> libraryManagement.findUserByEmail(""));
+    }
+
+    @Test
+    public void testFindUserByEmailNullException() {
+        assertThrows(IllegalArgumentException.class, () -> libraryManagement.findUserByEmail(null));
     }
 }
