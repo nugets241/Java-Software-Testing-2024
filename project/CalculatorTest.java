@@ -94,4 +94,29 @@ public class CalculatorTest {
             assertEquals("Cannot calculate modulus with zero", e.getMessage());
         }
     }
+
+    @Test
+    public void testAddException() {
+        assertThrows(ArithmeticException.class, () -> calculator.add(Integer.MAX_VALUE, 50));
+    }
+
+    @Test
+    public void testSubtractException() {
+        assertThrows(ArithmeticException.class, () -> calculator.subtract(Integer.MIN_VALUE, 50));
+    }
+
+    @Test
+    public void testMultiplyException() {
+        assertThrows(ArithmeticException.class, () -> calculator.multiply(Integer.MAX_VALUE, 2));
+    }
+
+    @Test
+    public void testDivideException() {
+        assertThrows(IllegalArgumentException.class, () -> calculator.divide(2, 0));
+    }
+
+    @Test
+    public void testModulusException() {
+        assertThrows(IllegalArgumentException.class, () -> calculator.modulus(2, 0));
+    }
 }
