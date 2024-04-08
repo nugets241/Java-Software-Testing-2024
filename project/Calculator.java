@@ -13,7 +13,7 @@ public class Calculator {
      * @return The sum of a and b.
      */
     public int add(int a, int b) {
-        return a + b;
+        return Math.addExact(a, b);
     }
 
     /**
@@ -24,7 +24,7 @@ public class Calculator {
      * @return The difference of a and b.
      */
     public int subtract(int a, int b) {
-        return a - b;
+        return Math.subtractExact(a, b);
     }
 
     /**
@@ -35,7 +35,7 @@ public class Calculator {
      * @return The product of a and b.
      */
     public int multiply(int a, int b) {
-        return a * b;
+        return Math.multiplyExact(a, b);
     }
 
     /**
