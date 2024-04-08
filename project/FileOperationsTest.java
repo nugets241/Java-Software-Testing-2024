@@ -131,4 +131,29 @@ public class FileOperationsTest {
         assertFalse(Files.exists(tempFile3));
         assertTrue(Files.exists(Path.of(newFilePath3)));
     }
+
+    @Test
+    public void testReadFileException() {
+        assertThrows(IOException.class, () -> fileOperations.readFile("nonexistent.txt"));
+    }
+
+    @Test
+    public void testWriteToFileException() {
+        assertThrows(IOException.class, () -> fileOperations.writeToFile("", "content"));
+    }
+
+    @Test
+    public void testAppendToFileException() {
+        assertThrows(IOException.class, () -> fileOperations.appendToFile("", "content"));
+    }
+
+    @Test
+    public void testDeleteFileException() {
+        assertThrows(IOException.class, () -> fileOperations.deleteFile("nonexistent.txt"));
+    }
+
+    @Test
+    public void testRenameFileException() {
+        assertThrows(IOException.class, () -> fileOperations.renameFile("nonexistent.txt", "newname.txt"));
+    }
 }
