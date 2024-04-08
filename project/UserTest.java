@@ -13,8 +13,8 @@ public class UserTest {
         user3 = new User("User3", "user3@email.com");
 
         book1 = new Book("Title1", "Author1", "ISBN1", 2024);
-        book2 = new Book("Title2", "Author2", "ISBN2", 2025);
-        book3 = new Book("Title3", "Author3", "ISBN3", 2026);
+        book2 = new Book("Title2", "Author2", "ISBN2", 1997);
+        book3 = new Book("Title3", "Author3", "ISBN3", 2003);
     }
 
     @Test
@@ -108,5 +108,31 @@ public class UserTest {
         user3.returnBook(book3);
         assertFalse(user3.getBorrowedBooks().contains(book3));
         assertTrue(book3.isAvailable());
+    }
+
+    @Test
+    public void testConstructorAuthorException() {
+        assertThrows(IllegalArgumentException.class, () -> new User(null, "email"));
+    }
+
+    @Test
+    public void testConstructorEmailException() {
+        assertThrows(IllegalArgumentException.class, () -> new User("name", null));
+    }
+
+    @Test
+    public void testBorrowBookException() {
+        assertThrows(IllegalArgumentException.class, () -> user1.borrowBook(null));
+    }
+
+    @Test
+    public void testReturnBookException() {
+        assertThrows(IllegalArgumentException.class, () -> user1.returnBook(null));
+    }
+
+    @Test
+    public void testBorrowBookExceptionUnavailable() {
+        user1.borrowBook(book1);
+        assertThrows(IllegalStateException.class, () -> user2.borrowBook(book1));
     }
 }
