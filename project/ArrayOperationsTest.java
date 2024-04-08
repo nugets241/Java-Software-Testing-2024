@@ -2,6 +2,8 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.NoSuchElementException;
+
 public class ArrayOperationsTest {
     private ArrayOperations arrayOperations;
     private int[] array1, array2, array3;
@@ -88,5 +90,30 @@ public class ArrayOperationsTest {
     @Test
     public void testReverseArray3() {
         assertArrayEquals(new int[] { 5, 3, 5, 6, 2, 9, 5, 1, 4, 1, 3 }, arrayOperations.reverseArray(array3));
+    }
+
+    @Test
+    public void testFindMaxException() {
+        assertThrows(NoSuchElementException.class, () -> arrayOperations.findMax(new int[] {}));
+    }
+
+    @Test
+    public void testFindMinException() {
+        assertThrows(NoSuchElementException.class, () -> arrayOperations.findMin(new int[] {}));
+    }
+
+    @Test
+    public void testCalculateAverageException() {
+        assertThrows(NoSuchElementException.class, () -> arrayOperations.calculateAverage(new int[] {}));
+    }
+
+    @Test
+    public void testSortArrayException() {
+        assertThrows(NullPointerException.class, () -> arrayOperations.sortArray(null));
+    }
+
+    @Test
+    public void testReverseArrayException() {
+        assertThrows(NullPointerException.class, () -> arrayOperations.reverseArray(null));
     }
 }
