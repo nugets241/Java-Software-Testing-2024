@@ -10,8 +10,12 @@ public class StringOperations {
      *
      * @param str The string to be reversed.
      * @return The reversed string.
+     * @throws IllegalArgumentException If the string is null or empty.
      */
     public String reverseString(String str) {
+        if (str == null || str.isEmpty()) {
+            throw new IllegalArgumentException("String must not be null or empty");
+        }
         return new StringBuilder(str).reverse().toString();
     }
 
@@ -21,8 +25,12 @@ public class StringOperations {
      * @param str1 The first string.
      * @param str2 The second string.
      * @return The concatenated string.
+     * @throws IllegalArgumentException If either string is null or empty.
      */
     public String concatenateStrings(String str1, String str2) {
+        if (str1 == null || str1.isEmpty() || str2 == null || str2.isEmpty()) {
+            throw new IllegalArgumentException("Strings must not be null or empty");
+        }
         return str1 + str2;
     }
 
@@ -32,8 +40,12 @@ public class StringOperations {
      * @param str The string to be searched.
      * @param sub The substring to be found.
      * @return True if the substring is found, false otherwise.
+     * @throws IllegalArgumentException If either string is null or empty.
      */
     public boolean findSubstring(String str, String sub) {
+        if (str == null || str.isEmpty() || sub == null || sub.isEmpty()) {
+            throw new IllegalArgumentException("String and substring must not be null or empty");
+        }
         return str.contains(sub);
     }
 
@@ -46,6 +58,9 @@ public class StringOperations {
      * @return The modified string.
      */
     public String replaceSubstring(String str, String oldSub, String newSub) {
+        if (str == null || str.isEmpty() || oldSub == null || oldSub.isEmpty() || newSub == null) {
+            throw new IllegalArgumentException("String, old substring and new substring must not be null or empty");
+        }
         return str.replace(oldSub, newSub);
     }
 
@@ -56,6 +71,9 @@ public class StringOperations {
      * @return The upper case string.
      */
     public String convertToUpperCase(String str) {
+        if (str == null || str.isEmpty()) {
+            throw new IllegalArgumentException("String must not be null or empty");
+        }
         return str.toUpperCase();
     }
 }
