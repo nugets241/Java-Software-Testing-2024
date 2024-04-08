@@ -2,6 +2,8 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.sql.Date;
+
 public class TransactionTest {
     private Transaction transaction1, transaction2, transaction3;
     private User user1, user2, user3;
@@ -14,8 +16,8 @@ public class TransactionTest {
         user3 = new User("User3", "user3@email.com");
 
         book1 = new Book("Title1", "Author1", "ISBN1", 2024);
-        book2 = new Book("Title2", "Author2", "ISBN2", 2025);
-        book3 = new Book("Title3", "Author3", "ISBN3", 2026);
+        book2 = new Book("Title2", "Author2", "ISBN2", 1997);
+        book3 = new Book("Title3", "Author3", "ISBN3", 2003);
 
         transaction1 = new Transaction(user1, book1);
         transaction2 = new Transaction(user2, book2);
@@ -95,5 +97,32 @@ public class TransactionTest {
     @Test
     public void testIsReturned3() {
         assertFalse(transaction3.isReturned());
+    }
+
+    @Test
+    public void testConstructorUserException() {
+        assertThrows(IllegalArgumentException.class,
+                () -> new Transaction(null, book1));
+    }
+
+    @Test
+    public void testConstructorBookException() {
+        assertThrows(IllegalArgumentException.class, () -> new Transaction(user1, null));
+    }
+
+    @Test
+    public void testSetReturnDateException() {
+        assertThrows(IllegalArgumentException.class, () -> transaction1.setReturnDate(null));
+    }
+
+    @Test
+    public void testSetReturnDateExceptionZero() {
+        Date returnDate = new Date(0);
+        assertThrows(IllegalArgumentException.class, () -> transaction1.setReturnDate(returnDate));
+    }
+
+    @Test
+    public void testExtendedDueDateException() {
+        assertThrows(IllegalArgumentException.class, () -> transaction1.extendDueDate(0));
     }
 }
