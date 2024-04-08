@@ -30,8 +30,12 @@ public class LibraryManagement {
      * Registers a new user.
      *
      * @param user The user to be registered.
+     * @throws IllegalArgumentException If the user is null.
      */
     public void registerUser(User user) {
+        if (user == null) {
+            throw new IllegalArgumentException("User must not be null");
+        }
         users.add(user);
     }
 
@@ -39,8 +43,12 @@ public class LibraryManagement {
      * Removes a user.
      *
      * @param user The user to be removed.
+     * @throws IllegalArgumentException If the user is null.
      */
     public void removeUser(User user) {
+        if (user == null) {
+            throw new IllegalArgumentException("User must not be null");
+        }
         users.remove(user);
     }
 
@@ -49,8 +57,12 @@ public class LibraryManagement {
      *
      * @param name The name of the user.
      * @return The user if found, null otherwise.
+     * @throws IllegalArgumentException If the name is null or empty.
      */
     public User findUserByName(String name) {
+        if (name == null || name.isEmpty()) {
+            throw new IllegalArgumentException("Name must not be null or empty");
+        }
         for (User user : users) {
             if (user.getName().equals(name)) {
                 return user;
@@ -64,8 +76,12 @@ public class LibraryManagement {
      *
      * @param email The email of the user.
      * @return The user if found, null otherwise.
+     * @throws IllegalArgumentException If the email is null or empty.
      */
     public User findUserByEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("Email must not be null or empty");
+        }
         for (User user : users) {
             if (user.getEmail().equals(email)) {
                 return user;
