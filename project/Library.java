@@ -24,8 +24,12 @@ public class Library {
      * Adds a book to the library.
      *
      * @param book The book to be added.
+     * @throws IllegalArgumentException If the book is null.
      */
     public void addBook(Book book) {
+        if (book == null) {
+            throw new IllegalArgumentException("Book must not be null");
+        }
         books.add(book);
     }
 
@@ -33,8 +37,12 @@ public class Library {
      * Removes a book from the library.
      *
      * @param book The book to be removed.
+     * @throws IllegalArgumentException If the book is null.
      */
     public void removeBook(Book book) {
+        if (book == null) {
+            throw new IllegalArgumentException("Book must not be null");
+        }
         books.remove(book);
     }
 
@@ -43,8 +51,12 @@ public class Library {
      *
      * @param title The title of the book.
      * @return The book if found, null otherwise.
+     * @throws IllegalArgumentException If the title is null or empty.
      */
     public Book findBookByTitle(String title) {
+        if (title == null || title.isEmpty()) {
+            throw new IllegalArgumentException("Title must not be null or empty");
+        }
         for (Book book : books) {
             if (book.getTitle().equals(title)) {
                 return book;
@@ -58,8 +70,12 @@ public class Library {
      *
      * @param author The author of the book.
      * @return The book if found, null otherwise.
+     * @throws IllegalArgumentException If the author is null or empty.
      */
     public Book findBookByAuthor(String author) {
+        if (author == null || author.isEmpty()) {
+            throw new IllegalArgumentException("Author must not be null or empty");
+        }
         for (Book book : books) {
             if (book.getAuthor().equals(author)) {
                 return book;
@@ -73,8 +89,12 @@ public class Library {
      *
      * @param isbn The ISBN of the book.
      * @return The book if found, null otherwise.
+     * @throws IllegalArgumentException If the ISBN is null or empty.
      */
     public Book findBookByISBN(String isbn) {
+        if (isbn == null || isbn.isEmpty()) {
+            throw new IllegalArgumentException("ISBN must not be null or empty");
+        }
         for (Book book : books) {
             if (book.getISBN().equals(isbn)) {
                 return book;
