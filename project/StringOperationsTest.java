@@ -93,4 +93,28 @@ public class StringOperationsTest {
         assertEquals("I LOVE PROGRAMMING.", stringOperations.convertToUpperCase(str3));
     }
 
+    @Test
+    public void testReverseStringException() {
+        assertThrows(IllegalArgumentException.class, () -> stringOperations.reverseString(""));
+    }
+
+    @Test
+    public void testConcatenateStringsException() {
+        assertThrows(IllegalArgumentException.class, () -> stringOperations.concatenateStrings(null, "str"));
+    }
+
+    @Test
+    public void testFindSubstringException() {
+        assertThrows(IllegalArgumentException.class, () -> stringOperations.findSubstring("str", ""));
+    }
+
+    @Test
+    public void testReplaceSubstringEmptyException() {
+        assertThrows(IllegalArgumentException.class, () -> stringOperations.replaceSubstring("str", "", "newSub"));
+    }
+
+    @Test
+    public void testConvertToUpperCaseException() {
+        assertThrows(IllegalArgumentException.class, () -> stringOperations.convertToUpperCase(null));
+    }
 }
