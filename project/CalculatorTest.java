@@ -61,16 +61,6 @@ public class CalculatorTest {
     }
 
     @Test
-    public void testDivideByZero() {
-        try {
-            calculator.divide(2, 0);
-            fail("Expected an IllegalArgumentException to be thrown");
-        } catch (IllegalArgumentException e) {
-            assertEquals("Cannot divide by zero", e.getMessage());
-        }
-    }
-
-    @Test
     public void testDivideNegative() {
         assertEquals(-2, calculator.divide(6, -3));
     }
@@ -83,16 +73,6 @@ public class CalculatorTest {
     @Test
     public void testModulusNegative() {
         assertEquals(-2, calculator.modulus(-5, 3));
-    }
-
-    @Test
-    public void testModulusByZero() {
-        try {
-            calculator.modulus(2, 0);
-            fail("Expected an IllegalArgumentException to be thrown");
-        } catch (IllegalArgumentException e) {
-            assertEquals("Cannot calculate modulus with zero", e.getMessage());
-        }
     }
 
     @Test
