@@ -1,10 +1,11 @@
 import java.util.Date;
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * @author      Ej Sobrepena <ej.sobrepena@tuni.fi>
- * @version     2024.03.18 (last modified)
- * @since       17.0 (minimum Java version)
+ * @author Ej Sobrepena <ej.sobrepena@tuni.fi>
+ * @version 2024.03.18 (last modified)
+ * @since 17.0 (minimum Java version)
  */
 public class Main {
 
@@ -12,8 +13,9 @@ public class Main {
      * Demonstrates the functionality of all your classes.
      *
      * @param args The command-line arguments passed to the program.
+     * @throws IOException
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Create instances of all classes
         Book book = new Book("Title", "Author", "ISBN", 2024);
         User user = new User("User", "user@email.com");
@@ -114,17 +116,13 @@ public class Main {
         // Demonstrate FileOperations
         String filePath = "test.txt";
         System.out.println("FileOperations:");
-        try {
-            fileOperations.writeToFile(filePath, "Hello, World!");
-            System.out.println("Read file: " + fileOperations.readFile(filePath));
-            fileOperations.appendToFile(filePath, " Java is fun.");
-            System.out.println("Read file: " + fileOperations.readFile(filePath));
-            fileOperations.renameFile(filePath, "newTest.txt");
-            System.out.println("Read file: " + fileOperations.readFile("newTest.txt"));
-            fileOperations.deleteFile("newTest.txt");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        fileOperations.writeToFile(filePath, "Hello, World!");
+        System.out.println("Read file: " + fileOperations.readFile(filePath));
+        fileOperations.appendToFile(filePath, " Java is fun.");
+        System.out.println("Read file: " + fileOperations.readFile(filePath));
+        fileOperations.renameFile(filePath, "newTest.txt");
+        System.out.println("Read file: " + fileOperations.readFile("newTest.txt"));
+        fileOperations.deleteFile("newTest.txt");
     }
 }
 
