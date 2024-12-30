@@ -1,3 +1,5 @@
 *.class
 .DS*
 __MAC*/
+.vscode
+*.sh
